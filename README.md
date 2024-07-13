@@ -10,6 +10,9 @@ This web application fetches programming jokes from a public API and displays th
 - **EJS**: Templating engine for generating HTML with JavaScript.
 - **Bootstrap**: Frontend framework for styling.
 
+## API Used
+https://sv443.net/jokeapi/v2/
+
 ## Files and Structure
 
 ### `index.js`
