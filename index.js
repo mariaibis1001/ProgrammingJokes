@@ -12,14 +12,18 @@ app.get("/", async (req, res) => {
 
 app.get("/joke", async (req, res) => {
     try {
-        const result = await axios.get("https://v2.jokeapi.dev/joke/Programming");
+        let result;
+        do {
+              result = await axios.get("https://v2.jokeapi.dev/joke/Programming");
+          } while (typeof result.data.joke == "undefined");
+
         res.render("index.ejs", {joke: result.data.joke});
     }
     catch(error) {
         console.error("Error with the api request.");
     }
-})
+});
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}.`);
-})
+});
